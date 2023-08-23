@@ -130,6 +130,7 @@ function App() {
               padding: "0.75rem",
               borderRadius: "0.375rem",
               cursor: "pointer",
+              color: "#ffffff",
             }}
           >
             {status === "RUNNING" ? <MdPause /> : <MdPlayCircle />}
