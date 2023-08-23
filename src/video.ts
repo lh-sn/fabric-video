@@ -1,18 +1,7 @@
 import * as fabric from "fabric";
-import {
-  Image,
-  ImageSource,
-  ImageProps,
-  Abortable,
-  TCrossOrigin,
-  classRegistry,
-} from "fabric";
+import { Image, ImageSource, ImageProps, classRegistry } from "fabric";
 
 interface VideoProps extends ImageProps {}
-
-type LoadImageOptions = Abortable & {
-  crossOrigin?: TCrossOrigin;
-};
 
 export class Video extends Image {
   static type = "Video";
@@ -99,7 +88,7 @@ const createVideoElement = async (
     videoElement.style.zIndex = "1000";
     videoElement.style.position = "absolute";
     videoElement.setAttribute("controls", "true");
-    videoElement.addEventListener("loadedmetadata", (e) => {
+    videoElement.addEventListener("loadedmetadata", () => {
       videoElement.currentTime = 0;
     });
     videoElement.addEventListener("seeked", function () {
